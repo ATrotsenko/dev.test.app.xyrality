@@ -13,6 +13,8 @@
 		FA214677203F0A5900950331 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA214675203F0A5900950331 /* Main.storyboard */; };
 		FA214679203F0A5900950331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA214678203F0A5900950331 /* Assets.xcassets */; };
 		FA21467C203F0A5900950331 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA21467A203F0A5900950331 /* LaunchScreen.storyboard */; };
+		FA21468D203F0E7900950331 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21468C203F0E7900950331 /* Constants.swift */; };
+		FA21468F203F0EF800950331 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21468E203F0EF800950331 /* World.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FA214678203F0A5900950331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA21467B203F0A5900950331 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA21467D203F0A5900950331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA21468C203F0E7900950331 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA21468E203F0EF800950331 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,7 @@
 		FA214683203F0CB400950331 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				FA21468C203F0E7900950331 /* Constants.swift */,
 				FA214671203F0A5900950331 /* AppDelegate.swift */,
 			);
 			path = Application;
@@ -124,6 +129,7 @@
 		FA214689203F0D3700950331 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA21468E203F0EF800950331 /* World.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 			files = (
 				FA214674203F0A5900950331 /* LoginViewController.swift in Sources */,
 				FA214672203F0A5900950331 /* AppDelegate.swift in Sources */,
+				FA21468F203F0EF800950331 /* World.swift in Sources */,
+				FA21468D203F0E7900950331 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
