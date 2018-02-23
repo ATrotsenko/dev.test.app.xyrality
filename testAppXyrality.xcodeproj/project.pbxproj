@@ -15,6 +15,13 @@
 		FA21467C203F0A5900950331 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA21467A203F0A5900950331 /* LaunchScreen.storyboard */; };
 		FA21468D203F0E7900950331 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21468C203F0E7900950331 /* Constants.swift */; };
 		FA21468F203F0EF800950331 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21468E203F0EF800950331 /* World.swift */; };
+		FA214692203F19B400950331 /* ClientAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA214691203F19B400950331 /* ClientAPI.swift */; };
+		FA214694203F22A800950331 /* AbstractApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA214693203F22A800950331 /* AbstractApiClient.swift */; };
+		FA2146962040312000950331 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2146952040312000950331 /* BaseViewController.swift */; };
+		FA21469820403EDB00950331 /* WorldsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21469720403EDB00950331 /* WorldsViewController.swift */; };
+		FA21469B20403F8100950331 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21469A20403F8100950331 /* UITableView+Extension.swift */; };
+		FA2146A12040408900950331 /* WorldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA21469F2040408900950331 /* WorldTableViewCell.swift */; };
+		FA2146A22040408900950331 /* WorldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2146A02040408900950331 /* WorldTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +37,13 @@
 		FA21467D203F0A5900950331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA21468C203F0E7900950331 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FA21468E203F0EF800950331 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		FA214691203F19B400950331 /* ClientAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientAPI.swift; sourceTree = "<group>"; };
+		FA214693203F22A800950331 /* AbstractApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractApiClient.swift; sourceTree = "<group>"; };
+		FA2146952040312000950331 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FA21469720403EDB00950331 /* WorldsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldsViewController.swift; sourceTree = "<group>"; };
+		FA21469A20403F8100950331 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		FA21469F2040408900950331 /* WorldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTableViewCell.swift; sourceTree = "<group>"; };
+		FA2146A02040408900950331 /* WorldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorldTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +98,9 @@
 			children = (
 				FA214684203F0CC900950331 /* Storyboards */,
 				FA214685203F0CD500950331 /* ViewControllers */,
+				FA214690203F198400950331 /* Network */,
 				FA214689203F0D3700950331 /* Models */,
+				FA21469920403F5B00950331 /* Extensions */,
 				FA214683203F0CB400950331 /* Application */,
 				FA214686203F0CEA00950331 /* Resources */,
 			);
@@ -103,8 +119,8 @@
 		FA214684203F0CC900950331 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				FA21467A203F0A5900950331 /* LaunchScreen.storyboard */,
 				FA214675203F0A5900950331 /* Main.storyboard */,
+				FA21467A203F0A5900950331 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -112,7 +128,10 @@
 		FA214685203F0CD500950331 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA2146952040312000950331 /* BaseViewController.swift */,
 				FA214673203F0A5900950331 /* LoginViewController.swift */,
+				FA21469720403EDB00950331 /* WorldsViewController.swift */,
+				FA21469C2040402A00950331 /* Views */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -132,6 +151,32 @@
 				FA21468E203F0EF800950331 /* World.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FA214690203F198400950331 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA214693203F22A800950331 /* AbstractApiClient.swift */,
+				FA214691203F19B400950331 /* ClientAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA21469920403F5B00950331 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA21469A20403F8100950331 /* UITableView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA21469C2040402A00950331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA21469F2040408900950331 /* WorldTableViewCell.swift */,
+				FA2146A02040408900950331 /* WorldTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +243,7 @@
 			files = (
 				FA21467C203F0A5900950331 /* LaunchScreen.storyboard in Resources */,
 				FA214679203F0A5900950331 /* Assets.xcassets in Resources */,
+				FA2146A22040408900950331 /* WorldTableViewCell.xib in Resources */,
 				FA214677203F0A5900950331 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,8 +313,14 @@
 			files = (
 				FA214674203F0A5900950331 /* LoginViewController.swift in Sources */,
 				FA214672203F0A5900950331 /* AppDelegate.swift in Sources */,
+				FA21469B20403F8100950331 /* UITableView+Extension.swift in Sources */,
 				FA21468F203F0EF800950331 /* World.swift in Sources */,
+				FA214692203F19B400950331 /* ClientAPI.swift in Sources */,
 				FA21468D203F0E7900950331 /* Constants.swift in Sources */,
+				FA2146A12040408900950331 /* WorldTableViewCell.swift in Sources */,
+				FA2146962040312000950331 /* BaseViewController.swift in Sources */,
+				FA214694203F22A800950331 /* AbstractApiClient.swift in Sources */,
+				FA21469820403EDB00950331 /* WorldsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,7 +464,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.testAppXyrality;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -428,7 +480,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.testAppXyrality;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

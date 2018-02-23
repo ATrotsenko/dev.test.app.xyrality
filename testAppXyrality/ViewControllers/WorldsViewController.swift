@@ -8,19 +8,33 @@
 
 import UIKit
 
-class WorldsViewController: UIViewController {
+class WorldsViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    open var worlds: [World]?
+    open var worlds = [World]()
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tableView.registerCell(WorldTableViewCell.self)
+       // tableView.reloadData()
     }
+}
 
+// MARK: - UITableViewDataSource
+extension WorldsViewController: UITableViewDataSource {
     
-
-
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return worlds.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueCell(cls: WorldTableViewCell.self, indexPath: indexPath) {
+            cell.cellSource(worlds[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
 }

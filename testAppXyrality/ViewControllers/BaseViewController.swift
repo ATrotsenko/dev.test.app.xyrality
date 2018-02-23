@@ -10,7 +10,6 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    
     // MARK: - Alert Messaging
     func alertMessage(_ message: String, completion: EmptyBlock? = nil) {
         let alertController = UIAlertController(title: "Information", message: message, preferredStyle: .alert)
@@ -20,6 +19,4 @@ class BaseViewController: UIViewController {
         alertController.addAction(alertAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
-    
 }

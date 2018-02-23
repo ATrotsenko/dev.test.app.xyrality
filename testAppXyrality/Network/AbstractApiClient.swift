@@ -15,11 +15,13 @@ import SwiftyJSON
 enum CustomError: Error {
     case serverConection
     case deserializationError
+    case dataEmpty
     
     var localizedDescription: String {
         switch self {
         case .serverConection: return "No internet connection"
         case .deserializationError: return "Desirelization Error"
+        case .dataEmpty: return "Data Empty"
         }
     }
 }
@@ -29,8 +31,8 @@ class AbstractApiClient: NSObject {
     
     public func loadObjects(_ url: String,
                             method: HTTPMethod = .post,
-                            parameters: [String : Any]?,
-                            onResult: @escaping (_ result: Any) -> (),
+                            parameters: AnyDict? = nil,
+                            onResult: @escaping (_ result: AnyDict?) -> (),
                             onError: @escaping (_ error: Error) -> ()) {
         
         Alamofire.request(url, method: method, parameters: parameters).responsePropertyList { (response) in
@@ -44,11 +46,11 @@ class AbstractApiClient: NSObject {
             guard let jsonData = try? JSONSerialization.data(withJSONObject: propertyList, options: .prettyPrinted) else {
                 return onError(CustomError.deserializationError)
             }
-            // Make json form data
-            guard let json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) else {
+            // Make json from data
+            guard let json = try? JSONSerialization.jsonObject(with: jsonData, options: .allowFragments) as? AnyDict else {
                 return onError(CustomError.deserializationError)
             }
-                onResult(json)
+            onResult(json)
             }
         }
     }

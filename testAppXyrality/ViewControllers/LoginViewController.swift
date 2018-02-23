@@ -10,36 +10,50 @@ import UIKit
 
 class LoginViewController: BaseViewController {
 
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     let login = "ios.test@xyrality.com"
     let password = "password"
     
+    let segueIdentifire = "ShowWorlds"
     var worlds = [World]()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getUserWorlds()
+        loginTextField.text = login
+        passwordTextField.text = password
     }
     
+    
     //MARK: - Private
-    private func getUserWorlds() {
+    private func loginUser(_ login: String, _ password: String) {
         APIClient.shared.getUserWorlds(login, pass: password) { (worlds, error) in
             if let error = error {
                 return self.alertMessage(error.localizedDescription)
             }
+            self.worlds = worlds!
+            self.performSegue(withIdentifier: self.segueIdentifire, sender: nil)
         }
     }
 
-    /*
+    //MARK: - IBActions
+    @IBAction func loginAction(_ sender: Any) {
+        guard let login = loginTextField.text,
+            let password = passwordTextField.text else {
+                return alertMessage("Please enter all fields")
+        }
+        loginUser(login, password)
+    }
+    
      // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        guard let controller = segue.destination as? WorldsViewController else {return}
+        controller.worlds = worlds
      }
-     */
+    
 
 }
 

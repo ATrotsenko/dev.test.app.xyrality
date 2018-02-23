@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
+typealias EmptyBlock = ()->()
+typealias WorldsResultBlock = ([World]?, Error?) -> ()
+typealias AnyDict = [String : Any]
 
+// Constants
 struct Constants {
     enum URL {
         static let worldsURL = "http://backend1.lordsandknights.com/XYRALITY/WebObjects/BKLoginServer.woa/wa/worlds"
