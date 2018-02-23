@@ -8,8 +8,6 @@
 
 import Foundation
 import Alamofire
-import ObjectMapper
-import SwiftyJSON
 
 
 enum CustomError: Error {

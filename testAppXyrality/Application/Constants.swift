@@ -18,7 +18,7 @@ struct Constants {
     enum URL {
         static let worldsURL = "http://backend1.lordsandknights.com/XYRALITY/WebObjects/BKLoginServer.woa/wa/worlds"
     }
-    
+
     enum Device {
         static var deviceType: String {
             let device = UIDevice.current
@@ -28,5 +28,10 @@ struct Constants {
         static var deviceUUID: String {
             return NSUUID().uuidString
         }
+    }
+    
+    enum TestValues {
+        static let login = "ios.test@xyrality.com"
+        static let password = "password"
     }
 }

@@ -19,7 +19,6 @@ class WorldsViewController: BaseViewController {
         super.viewDidLoad()
         
         tableView.registerCell(WorldTableViewCell.self)
-       // tableView.reloadData()
     }
 }
 
@@ -33,6 +32,7 @@ extension WorldsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueCell(cls: WorldTableViewCell.self, indexPath: indexPath) {
             cell.cellSource(worlds[indexPath.row])
+            cell.backgroundColor = indexPath.row % 2 == 0 ? UIColor.lightGray : UIColor.clear
             return cell
         }
         return UITableViewCell()

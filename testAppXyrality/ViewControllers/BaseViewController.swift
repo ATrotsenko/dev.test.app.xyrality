@@ -9,7 +9,17 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
+    
+    //MARK: - Keyboard settings
+    func registerViewToHideKeyboard(_ view: UIView) {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard)))
+    }
+    
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
+    }
+    
     // MARK: - Alert Messaging
     func alertMessage(_ message: String, completion: EmptyBlock? = nil) {
         let alertController = UIAlertController(title: "Information", message: message, preferredStyle: .alert)
