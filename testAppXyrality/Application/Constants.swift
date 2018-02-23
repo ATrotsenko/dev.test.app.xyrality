@@ -7,8 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct Constants {
-    static let URL = "to http://backend1.lordsandknights.com/XYRALITY/WebObjects/BKLoginServer.woa/wa/worlds"
+    enum URL {
+        static let worldsURL = "http://backend1.lordsandknights.com/XYRALITY/WebObjects/BKLoginServer.woa/wa/worlds"
+    }
+    
+    enum Device {
+        static var deviceType: String {
+            let device = UIDevice.current
+            return device.model + " " + device.systemName + " " + device.systemVersion
+        }
+        
+        static var deviceUUID: String {
+            return NSUUID().uuidString
+        }
+    }
 }
